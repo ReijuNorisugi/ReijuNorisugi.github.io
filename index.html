@@ -36,7 +36,7 @@
 
     /* White card for texts */
     .white-card {
-      background: #ececee;
+      background: #d0d0d4;
       color: #000000;
       padding: 35px 40px;
       border-radius: 18px;
@@ -45,7 +45,7 @@
       border: 1px solid #ccc;
     }
 
-    /* 白カード内リンク（黒背景前提の青→濃い青へ調整） */
+    /* For link in white card */
     .white-card a {
       color: #0033aa;
     }
@@ -130,7 +130,7 @@
       color: inherit;
     }
 
-    /* アコーディオン */
+    /* Accordion */
     .accordion-content {
       max-height: 0;
       overflow: hidden;
@@ -138,7 +138,7 @@
       margin-top: 10px;
     }
 
-    /* DOI リスト（番号が下からカウント） */
+    /* DOI lists */
     .doi-list {
       counter-reset: doi-counter;
       display: flex;
@@ -153,7 +153,7 @@
       position: relative;
     }
 
-    /* DOI 番号を黒カードに合わせて黒文字へ */
+    /* DOI list */
     .doi-list li::before {
       content: "[" counter(doi-counter) "] ";
       color: #000;
@@ -213,7 +213,7 @@
       </div>
     </div>
 
-    <!-- Research Interests: 白カード -->
+    <!-- Research Interests: white card -->
     <div class="section white-card">
       <h2>Research Interests</h2>
       I am studying earthquake source physics and applications of machine learning techniques to geophysical problems. My current research interests are the followings.
@@ -227,7 +227,7 @@
       </ul>
     </div>
 
-    <!-- Publications: 白カード -->
+    <!-- Publications: white card -->
     <div class="section white-card">
       <h2 id="pub-toggle">Publications ▼</h2>
       <div class="accordion-content" id="pub-list">
