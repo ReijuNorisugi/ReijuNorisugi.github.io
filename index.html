@@ -173,59 +173,31 @@
     }
 
     /* ===============================
-      DOI / Conference List Styles
-    =============================== */
-    .doi-list {
-      counter-reset: doi-counter;
-      display: flex;
-      flex-direction: column-reverse;
-      padding-left: 0;
-    }
-
-    .doi-list li {
-      margin-bottom: 14px;
-      list-style: none;
-      counter-increment: doi-counter;
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: flex-start;
-    }
-
-    .doi-list li::before {
-      content: "[" counter(doi-counter) "]";
-      color: #0033aa;
-      font-weight: bold;
-      margin-right: 6px;
-      flex-shrink: 0;
-    }
-
-    /* ===============================
-      Publications list.
+      Publications専用リスト（番号下から順）
     =============================== */
     .publication-list {
       counter-reset: pub-counter;
       padding-left: 0;
       list-style: none;
       display: flex;
-      flex-direction: column;
+      flex-direction: column; /* DOM の順番どおり */
     }
 
     .publication-list li {
-      counter-increment: pub-counter;
+      counter-increment: pub-counter; /* JSで番号振り直すためここは使わない */
       margin-bottom: 20px;
       padding-left: 28px;
       position: relative;
     }
 
     .publication-list li::before {
-      content: "[" counter(pub-counter) "] ";
+      content: "[" attr(data-num) "] ";
       position: absolute;
       left: 0;
       top: 0;
       color: #0033aa;
       font-weight: bold;
     }
-
 
     /* Education list */
     .edu-list {
@@ -432,6 +404,13 @@
     setupToggle('edu-toggle', 'edu-list', 'Educations');
     setupToggle('conf-toggle', 'conf-list', 'Conferences');
     setupToggle('awards-toggle', 'awards-list', 'Awards');
+
+    // Publications番号を下から順に振る
+    const pubItems = document.querySelectorAll('.publication-list li');
+    const n = pubItems.length;
+    pubItems.forEach((li, i) => {
+      li.setAttribute('data-num', n - i); // 下から順
+    });
   </script>
 
   <footer class="footer">
