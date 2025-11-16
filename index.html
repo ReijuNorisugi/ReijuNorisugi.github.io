@@ -23,6 +23,7 @@
       margin: auto;
     }
 
+    /* 黒い通常カード（プロフィール部分） */
     .card {
       background: #111217;
       padding: 40px 50px;
@@ -31,6 +32,22 @@
       text-align: center;
       border: 1px solid rgba(255, 255, 255, 0.05);
       margin-bottom: 42px;
+    }
+
+    /* 追加：研究内容・Publications の白カード */
+    .white-card {
+      background: #ffffff;
+      color: #000000;
+      padding: 35px 40px;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.15);
+      margin-bottom: 45px;
+      border: 1px solid #ccc;
+    }
+
+    /* 白カード内リンク（黒背景前提の青→濃い青へ調整） */
+    .white-card a {
+      color: #0033aa;
     }
 
     .photo {
@@ -110,11 +127,10 @@
       padding-left: 10px;
       cursor: pointer;
       user-select: none;
+      color: inherit;
     }
 
-    a { color: #66c8ff; }
-
-    /* アコーディオン用 */
+    /* アコーディオン */
     .accordion-content {
       max-height: 0;
       overflow: hidden;
@@ -122,6 +138,7 @@
       margin-top: 10px;
     }
 
+    /* DOI リスト（番号が下からカウント） */
     .doi-list {
       counter-reset: doi-counter;
       display: flex;
@@ -130,15 +147,16 @@
     }
 
     .doi-list li {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       list-style: none;
       counter-increment: doi-counter;
       position: relative;
     }
 
+    /* DOI 番号を黒カードに合わせて黒文字へ */
     .doi-list li::before {
       content: "[" counter(doi-counter) "] ";
-      color: #66c8ff;
+      color: #000;
       font-weight: bold;
       position: absolute;
       left: -32px;
@@ -195,7 +213,8 @@
       </div>
     </div>
 
-    <div class="section">
+    <!-- Research Interests: 白カード -->
+    <div class="section white-card">
       <h2>Research Interests</h2>
       I am studying earthquake source physics and applications of machine learning techniques to geophysical problems. My current research interests are the followings.
       <ul>
@@ -208,10 +227,12 @@
       </ul>
     </div>
 
-    <div class="section">
+    <!-- Publications: 白カード -->
+    <div class="section white-card">
       <h2 id="pub-toggle">Publications ▼</h2>
       <div class="accordion-content" id="pub-list">
         <ol class="doi-list">
+
           <li>
             Norisugi, R., Kaneko, Y., & Rouet-Leduc, B. (2024).<br>
             Machine learning predicts earthquakes in the continuum model of a rate-and-state fault with frictional heterogeneities.<br>
@@ -225,6 +246,7 @@
             <i>Nature Communications</i>, 16(1), 9593.<br>
             <a href="https://doi.org/10.1038/s41467-025-64542-4" target="_blank">https://doi.org/10.1038/s41467-025-64542-4</a>
           </li>
+
         </ol>
       </div>
     </div>
@@ -245,7 +267,7 @@
     const content = document.getElementById('pub-list');
 
     toggle.addEventListener('click', () => {
-      if(content.style.maxHeight){
+      if (content.style.maxHeight) {
         content.style.maxHeight = null;
         toggle.textContent = 'Publications ▼';
       } else {
