@@ -29,7 +29,7 @@
     }
 
     /* ===============================
-      Profile Card (Black Card)
+      Profile Card
     =============================== */
     .card {
       background: #111217;
@@ -41,7 +41,6 @@
       margin-bottom: 42px;
     }
 
-    /* Profile photo */
     .photo {
       width: 135px;
       height: 135px;
@@ -54,7 +53,6 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     }
 
-    /* Name and title */
     h1 {
       font-size: 2rem;
       margin-bottom: 25px;
@@ -79,7 +77,6 @@
       text-decoration: underline;
     }
 
-    /* Links inside profile card */
     .links {
       display: flex;
       flex-direction: column;
@@ -108,20 +105,18 @@
       border: 1px solid rgba(0, 150, 255, 0.3);
     }
 
-    /* Icon colors */
     .fa-orcid { color: #A6CE39; font-size: 1.4rem; }
     .fa-github { color: #ffffff; font-size: 1.4rem; }
     .fa-at { color: #66c8ff; font-size: 1.4rem; }
     .fa-google { color: #FFC107; font-size: 1.4rem; }
     .fa-box { color: #a86cd3; font-size: 1.4rem; }
 
-    /* Add extra top margin for the first link */
     .card .links a:first-child {
       margin-top: 16px;
     }
 
     /* ===============================
-      White Card (Text Sections)
+      White Cards
     =============================== */
     .white-card {
       background: #b9b9bc;
@@ -170,7 +165,6 @@
       color: inherit;
     }
 
-    /* Accordion content (for publications/education) */
     .accordion-content {
       max-height: 0;
       overflow: hidden;
@@ -178,8 +172,9 @@
       margin-top: 10px;
     }
 
-    /* DOI list style */
-    /* DOI / Conference list */
+    /* ===============================
+      DOI / Conference List Styles
+    =============================== */
     .doi-list {
       counter-reset: doi-counter;
       display: flex;
@@ -192,18 +187,42 @@
       list-style: none;
       counter-increment: doi-counter;
       display: flex;
-      flex-wrap: nowrap;       /* ここを wrap → nowrap に変更 */
-      align-items: flex-start; /* 高さ揃え */
+      flex-wrap: nowrap;
+      align-items: flex-start;
     }
 
     .doi-list li::before {
-      content: "[" counter(doi-counter) "]"; 
+      content: "[" counter(doi-counter) "]";
       color: #0033aa;
       font-weight: bold;
-      margin-right: 6px;       /* 番号とテキストの間隔 */
-      flex-shrink: 0;          /* 番号が潰れない */
+      margin-right: 6px;
+      flex-shrink: 0;
     }
 
+    /* ===============================
+      Publications専用リスト（改行入り対応）
+    =============================== */
+    .publication-list {
+      counter-reset: pub-counter;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .publication-list li {
+      counter-increment: pub-counter;
+      margin-bottom: 20px;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .publication-list li::before {
+      content: "[" counter(pub-counter) "] ";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #0033aa;
+      font-weight: bold;
+    }
 
     /* Education list */
     .edu-list {
@@ -216,9 +235,7 @@
       list-style: disc;
     }
 
-    /* ===============================
-      Footer
-    =============================== */
+    /* Footer */
     .footer {
       margin-top: 15px;
       padding: 20px 10px;
@@ -238,70 +255,25 @@
     }
 
     /* ===============================
-      Responsive Styles (Mobile)
+      Responsive Styles
     =============================== */
     @media (max-width: 600px) {
-
-      body {
-        padding: 20px 10px;
-      }
-
-      .container {
-        width: 95%;
-      }
-
-      .card, .white-card {
-        padding: 20px 20px;
-        margin-bottom: 30px;
-      }
-
-      .photo {
-        width: 100px;
-        height: 100px;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      .white-card p, .white-card ul li, .edu-list li, .subtext {
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-
-      /* Adjust first link top margin for mobile */
-      .card .links a:first-child {
-        margin-top: 6px;
-      }
-
-      .links a {
-        font-size: 0.95rem;
-        padding: 8px 12px;
-      }
-
-      .links {
-        gap: 8px;
-      }
-
-      .doi-list li {
-        gap: 4px;
-      }
-    
-      .edu-list {
-        padding-left: 18px;
-      }
-
-      .footer {
-        font-size: 0.85rem;
-        padding: 15px 5px;
-      }
+      body { padding: 20px 10px; }
+      .container { width: 95%; }
+      .card, .white-card { padding: 20px 20px; margin-bottom: 30px; }
+      .photo { width: 100px; height: 100px; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      .white-card p, .white-card ul li, .edu-list li, .subtext { font-size: 0.95rem; line-height: 1.5; }
+      .card .links a:first-child { margin-top: 6px; }
+      .links a { font-size: 0.95rem; padding: 8px 12px; }
+      .links { gap: 8px; }
+      .doi-list li { gap: 4px; }
+      .edu-list { padding-left: 18px; }
+      .publication-list li { padding-left: 24px; }
+      .publication-list li::before { left: 0; }
+      .footer { font-size: 0.85rem; padding: 15px 5px; }
     }
-</style>
-
   </style>
 </head>
 <body>
@@ -310,9 +282,7 @@
     <!-- Profile card -->
     <div class="card">
       <div class="photo"></div>
-
       <h1>Reiju Norisugi</h1>
-
       <div class="subtext">Second year master's student</div>
       <div class="subtext">
         <a href="https://www.eps.sci.kyoto-u.ac.jp/index-e.html" target="_blank">
@@ -327,41 +297,27 @@
 
       <div class="links">
         <a href="mailto:norisugi.reiju.77e@st.kyoto-u.ac.jp">
-          <i class="fa-solid fa-at"></i>
-          norisugi.reiju.77e@st.kyoto-u.ac.jp
+          <i class="fa-solid fa-at"></i> norisugi.reiju.77e@st.kyoto-u.ac.jp
         </a>
-
         <a href="https://scholar.google.com/citations?user=7JwUgzEAAAAJ&hl=ja" target="_blank">
-          <i class="fa-brands fa-google"></i>
-          Google Scholar
+          <i class="fa-brands fa-google"></i> Google Scholar
         </a>
-
         <a href="https://github.com/ReijuNorisugi" target="_blank">
-          <i class="fa-brands fa-github"></i>
-          GitHub Repository (to be updated)
+          <i class="fa-brands fa-github"></i> GitHub Repository (to be updated)
         </a>
-
         <a href='https://zenodo.org/search?page=1&size=20&q=metadata.creators.person_or_org.name:"Norisugi, Reiju"' target="_blank">
-          <i class="fa-solid fa-box"></i>
-          Zenodo Repository
+          <i class="fa-solid fa-box"></i> Zenodo Repository
         </a>
-
         <a href="https://orcid.org/0009-0002-6610-9482" target="_blank">
-          <i class="fa-brands fa-orcid"></i>
-          ORCID: 0009-0002-6610-9482
+          <i class="fa-brands fa-orcid"></i> ORCID: 0009-0002-6610-9482
         </a>
       </div>
     </div>
 
-    <!-- Research Interests: white card -->
+    <!-- Research Interests -->
     <div class="section white-card">
       <h2>Research Interests and bakgrounds</h2>
-
-      <p>
-        I am studying earthquake source physics and applications of machine learning techniques to 
-        geophysical problems. My current research interests are the followings.
-      </p>
-
+      <p>I am studying earthquake source physics and applications of machine learning techniques to geophysical problems. My current research interests are the followings.</p>
       <ul>
         <li>Multi-scale earthquake source property.</li>
         <li>Representation and scale-dependence of fault constitutive law.</li>
@@ -370,125 +326,75 @@
         <li>Numerical simulation and modeling of dynamic earthquake sequences.</li>
         <li>Machine learning for physics-based earthquake prediction.</li>
       </ul>
-      
-      <p>
-        In my master's program, I work with the projects about multi-scale fault constitutive law with 
-        <b>Prof. Hiroyuki Noda</b>, and about synthetic (numerical or laboraotry) earthquake prediction using machine learning 
-        with <b>Prof. Yoshihiro Kaneko</b> and <b>Prof. Bertrand Rouet-Leduc</b>.
-      </p>
-
-      <p>
-        I am developing numerical simulation of dynamic earthquake sequence by spectral boundary intergral equation method,
-        and various machine learning-based method for synthetic earthquake prediction.
-      </p>
-
+      <p>In my master's program, I work with the projects about multi-scale fault constitutive law with <b>Prof. Hiroyuki Noda</b>, and about synthetic (numerical or laboraotry) earthquake prediction using machine learning with <b>Prof. Yoshihiro Kaneko</b> and <b>Prof. Bertrand Rouet-Leduc</b>.</p>
+      <p>I am developing numerical simulation of dynamic earthquake sequence by spectral boundary intergral equation method, and various machine learning-based method for synthetic earthquake prediction.</p>
     </div>
 
-    <!-- Publications: white card -->
+    <!-- Publications -->
     <div class="section white-card">
       <h2 id="pub-toggle">Publications ▼</h2>
       <div class="accordion-content" id="pub-list">
-        <ol class="doi-list">
-
+        <ol class="publication-list">
           <li>
             Norisugi, R., Kaneko, Y., & Rouet-Leduc, B. (2024).<br>
             Machine learning predicts earthquakes in the continuum model of a rate-and-state fault with frictional heterogeneities.<br>
             <i>Geophysical Research Letters</i>, 51(9), e2024GL108655.<br>
             <a href="https://doi.org/10.1029/2024GL108655" target="_blank">https://doi.org/10.1029/2024GL108655</a>
           </li>
-
           <li>
             Norisugi, R., Kaneko, Y., & Rouet-Leduc, B. (2025).<br>
             Machine learning predicts meter-scale laboratory earthquakes.<br>
             <i>Nature Communications</i>, 16(1), 9593.<br>
             <a href="https://doi.org/10.1038/s41467-025-64542-4" target="_blank">https://doi.org/10.1038/s41467-025-64542-4</a>
           </li>
-
         </ol>
       </div>
     </div>
 
-    <!-- Conferences: white card -->
+    <!-- Conferences -->
     <div class="section white-card">
       <h2 id="conf-toggle">Conferences ▼</h2>
       <div class="accordion-content" id="conf-list">
         <ol class="doi-list">
-          <li>
-            International Joint Workshop on Slow-to-Fast Earthquakes, Tokyo, Japan, 2023.
-          </li>
-          <li>
-            The ERC Tectonic Workshop, Roma 2nd Edition, Italy, 2023.
-          </li>
-          <li>
-            AGU Fall Meeting, San Francisco, USA, 2023.
-          </li>
-          <li>
-            JpGU, Chiba, Japan, 2024.
-          </li>
-          <li>
-            International Joint Workshop on Slow-to-Fast Earthquakes, Beppu, Japan, 2024.
-          </li>
-          <li>
-            International Workshop on Earthquakes 4th Edition, Cargèse, France, 2024.
-          </li>
-          <li>
-            SSJ Fall Meeting, Nigata, Japan, 2024.
-          </li>
-          <li>
-            AGU Fall Meeting, Washington D.C., USA, 2024.
-          </li>
-          <li>
-            JpGU, Chiba, Japan, 2025.
-          </li>
-          <li>
-            The ERC Tectonic Workshop 3rd Edition, Roma, Italy, 2025.
-          </li>
-          <li>
-            SSJ Fall Meeting, Fukuoka, Japan, 2025.
-          </li>
-          <li>
-            12th ACES International Workshop, Taipei, Taiwan, 2025.
-          </li>
+          <li>International Joint Workshop on Slow-to-Fast Earthquakes, Tokyo, Japan, 2023.</li>
+          <li>The ERC Tectonic Workshop, Roma 2nd Edition, Italy, 2023.</li>
+          <li>AGU Fall Meeting, San Francisco, USA, 2023.</li>
+          <li>JpGU, Chiba, Japan, 2024.</li>
+          <li>International Joint Workshop on Slow-to-Fast Earthquakes, Beppu, Japan, 2024.</li>
+          <li>International Workshop on Earthquakes 4th Edition, Cargèse, France, 2024.</li>
+          <li>SSJ Fall Meeting, Nigata, Japan, 2024.</li>
+          <li>AGU Fall Meeting, Washington D.C., USA, 2024.</li>
+          <li>JpGU, Chiba, Japan, 2025.</li>
+          <li>The ERC Tectonic Workshop 3rd Edition, Roma, Italy, 2025.</li>
+          <li>SSJ Fall Meeting, Fukuoka, Japan, 2025.</li>
+          <li>12th ACES International Workshop, Taipei, Taiwan, 2025.</li>
         </ol>
       </div>
     </div>
 
-    <!-- Educations: white card -->
+    <!-- Educations -->
     <div class="section white-card">
       <h2 id="edu-toggle">Educations ▼</h2>
-
       <div class="accordion-content" id="edu-list">
         <ul class="edu-list">
-
-          <li>
-            M.Sc. in Geophysics, Kyoto University  
-            <br><span style="color:#333;">2024-present</span>
-          </li>
-
-          <li>
-            B.Sc. in Geophysics, Kyoto University  
-            <br><span style="color:#333;">2020-2024</span>
-          </li>
-
+          <li>M.Sc. in Geophysics, Kyoto University<br><span style="color:#333;">2024-present</span></li>
+          <li>B.Sc. in Geophysics, Kyoto University<br><span style="color:#333;">2020-2024</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Awards: white card -->
+    <!-- Awards -->
     <div class="section white-card">
       <h2 id="awards-toggle">Awards ▼</h2>
       <div class="accordion-content" id="awards-list">
         <ul class="edu-list">
-          <li>
-            JSPS Research Fellowship for Young Scientists, 2024
-          </li>
-          <li>
-            Best Poster Award, JpGU, 2022
-          </li>
+          <li>JSPS Research Fellowship for Young Scientists, 2024</li>
+          <li>Best Poster Award, JpGU, 2022</li>
         </ul>
       </div>
     </div>
 
+    <!-- Address -->
     <div class="section">
       <h2>Address</h2>
       <p>
@@ -501,70 +407,31 @@
   </div>
 
   <script>
-    // Publications
-    const toggle = document.getElementById('pub-toggle');
-    const content = document.getElementById('pub-list');
+    // Accordion toggles
+    function setupToggle(toggleId, contentId, title) {
+      const toggle = document.getElementById(toggleId);
+      const content = document.getElementById(contentId);
+      toggle.addEventListener('click', () => {
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          toggle.textContent = title + ' ▼';
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          toggle.textContent = title + ' ▲';
+        }
+      });
+    }
 
-    toggle.addEventListener('click', () => {
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-        toggle.textContent = 'Publications ▼';
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        toggle.textContent = 'Publications ▲';
-      }
-    });
-
-    // Educations
-    const eduToggle = document.getElementById('edu-toggle');
-    const eduContent = document.getElementById('edu-list');
-
-    eduToggle.addEventListener('click', () => {
-      if (eduContent.style.maxHeight) {
-        eduContent.style.maxHeight = null;
-        eduToggle.textContent = 'Educations ▼';
-      } else {
-        eduContent.style.maxHeight = eduContent.scrollHeight + "px";
-        eduToggle.textContent = 'Educations ▲';
-      }
-    });
-
-    // Conferences
-    const confToggle = document.getElementById('conf-toggle');
-    const confContent = document.getElementById('conf-list');
-
-    confToggle.addEventListener('click', () => {
-      if (confContent.style.maxHeight) {
-        confContent.style.maxHeight = null;
-        confToggle.textContent = 'Conferences ▼';
-      } else {
-        confContent.style.maxHeight = confContent.scrollHeight + "px";
-        confToggle.textContent = 'Conferences ▲';
-      }
-    });
-
-    // Awards
-    const awardsToggle = document.getElementById('awards-toggle');
-    const awardsContent = document.getElementById('awards-list');
-
-    awardsToggle.addEventListener('click', () => {
-      if (awardsContent.style.maxHeight) {
-        awardsContent.style.maxHeight = null;
-        awardsToggle.textContent = 'Awards ▼';
-      } else {
-        awardsContent.style.maxHeight = awardsContent.scrollHeight + "px";
-        awardsToggle.textContent = 'Awards ▲';
-      }
-    });
+    setupToggle('pub-toggle', 'pub-list', 'Publications');
+    setupToggle('edu-toggle', 'edu-list', 'Educations');
+    setupToggle('conf-toggle', 'conf-list', 'Conferences');
+    setupToggle('awards-toggle', 'awards-list', 'Awards');
   </script>
 
   <footer class="footer">
     <p>© 2025 Reiju Norisugi &nbsp; Updated: 2025-11-16</p>
-    <p>
-      This website is licensed under
-      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
-        CC BY 4.0
-      </a>.
+    <p>This website is licensed under
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
     </p>
   </footer>
 </body>
