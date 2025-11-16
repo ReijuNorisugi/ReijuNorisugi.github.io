@@ -191,17 +191,17 @@
       margin-bottom: 14px;
       list-style: none;
       counter-increment: doi-counter;
-      padding-left: 0;
       display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;       /* ここを wrap → nowrap に変更 */
+      align-items: flex-start; /* 高さ揃え */
     }
 
     .doi-list li::before {
       content: "[" counter(doi-counter) "]"; 
       color: #0033aa;
       font-weight: bold;
-      flex-shrink: 0;
+      margin-right: 6px;       /* 番号とテキストの間隔 */
+      flex-shrink: 0;          /* 番号が潰れない */
     }
 
 
@@ -291,7 +291,6 @@
         gap: 4px;
       }
     
-
       .edu-list {
         padding-left: 18px;
       }
