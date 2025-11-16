@@ -404,6 +404,21 @@
       </div>
     </div>
 
+    <!-- Conferences: white card -->
+    <div class="section white-card">
+      <h2 id="conf-toggle">Conferences ▼</h2>
+      <div class="accordion-content" id="conf-list">
+        <ul class="edu-list">
+          <li>
+            AGU Fall Meeting, San Francisco, USA, 2023
+          </li>
+          <li>
+            Japan Geoscience Union Meeting, Tokyo, Japan, 2022
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <!-- Educations: white card -->
     <div class="section white-card">
       <h2 id="edu-toggle">Educations ▼</h2>
@@ -421,6 +436,21 @@
             <br><span style="color:#333;">2020-2024</span>
           </li>
 
+        </ul>
+      </div>
+    </div>
+
+    <!-- Awards: white card -->
+    <div class="section white-card">
+      <h2 id="awards-toggle">Awards ▼</h2>
+      <div class="accordion-content" id="awards-list">
+        <ul class="edu-list">
+          <li>
+            JSPS Research Fellowship for Young Scientists, 2024
+          </li>
+          <li>
+            Best Poster Award, JpGU, 2022
+          </li>
         </ul>
       </div>
     </div>
@@ -462,6 +492,34 @@
       } else {
         eduContent.style.maxHeight = eduContent.scrollHeight + "px";
         eduToggle.textContent = 'Educations ▲';
+      }
+    });
+
+    // Conferences
+    const confToggle = document.getElementById('conf-toggle');
+    const confContent = document.getElementById('conf-list');
+
+    confToggle.addEventListener('click', () => {
+      if (confContent.style.maxHeight) {
+        confContent.style.maxHeight = null;
+        confToggle.textContent = 'Conferences ▼';
+      } else {
+        confContent.style.maxHeight = confContent.scrollHeight + "px";
+        confToggle.textContent = 'Conferences ▲';
+      }
+    });
+
+    // Awards
+    const awardsToggle = document.getElementById('awards-toggle');
+    const awardsContent = document.getElementById('awards-list');
+
+    awardsToggle.addEventListener('click', () => {
+      if (awardsContent.style.maxHeight) {
+        awardsContent.style.maxHeight = null;
+        awardsToggle.textContent = 'Awards ▼';
+      } else {
+        awardsContent.style.maxHeight = awardsContent.scrollHeight + "px";
+        awardsToggle.textContent = 'Awards ▲';
       }
     });
   </script>
