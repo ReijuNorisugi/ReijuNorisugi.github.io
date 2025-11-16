@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reiju Norisugi</title>
-
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -14,7 +14,6 @@
       background: #000010;
       font-family: "Inter", sans-serif;
       color: #e6e6e6;
-      display: block;
       padding: 40px 0;
     }
 
@@ -105,71 +104,40 @@
     .fa-box { color: #a86cd3; font-size: 1.4rem; }
 
     .section { margin-bottom: 40px; }
+
     h2 {
       border-left: 4px solid #444;
       padding-left: 10px;
-      cursor: default;
+      cursor: pointer;
+      user-select: none;
     }
-    h2.clickable { cursor: pointer; }
+
     a { color: #66c8ff; }
 
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
+    /* アコーディオン用 */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 10px;
     }
 
-    .modal-content {
-      background-color: #111217;
-      margin: 10% auto;
-      padding: 30px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 700px;
-      border-radius: 15px;
-      color: #e6e6e6;
-      position: relative;
+    .accordion-content ul {
+      padding-left: 20px;
     }
 
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      font-size: 0.9rem;
-      color: #888;
+    .accordion-content li {
+      margin-bottom: 5px;
     }
   </style>
 </head>
-
 <body>
   <div class="container">
 
     <!-- Profile card -->
     <div class="card">
       <div class="photo"></div>
+
       <h1>Reiju Norisugi</h1>
 
       <div class="subtext">Master student</div>
@@ -189,18 +157,22 @@
           <i class="fa-solid fa-at"></i>
           norisugi.reiju.77e@st.kyoto-u.ac.jp
         </a>
+
         <a href="https://scholar.google.com/citations?user=7JwUgzEAAAAJ&hl=ja" target="_blank">
           <i class="fa-brands fa-google"></i>
           Google Scholar
         </a>
+
         <a href="https://github.com/ReijuNorisugi" target="_blank">
           <i class="fa-brands fa-github"></i>
-          GitHub Repository
+          GitHub Repository (to be updated)
         </a>
+
         <a href='https://zenodo.org/search?page=1&size=20&q=metadata.creators.person_or_org.name:"Norisugi, Reiju"' target="_blank">
           <i class="fa-solid fa-box"></i>
           Zenodo Repository
         </a>
+
         <a href="https://orcid.org/0009-0002-6610-9482" target="_blank">
           <i class="fa-brands fa-orcid"></i>
           ORCID: 0009-0002-6610-9482
@@ -210,8 +182,19 @@
 
     <!-- Sections -->
     <div class="section">
+      <h2 id="pub-toggle">Publications ▼</h2>
+      <div class="accordion-content" id="pub-list">
+        <ul>
+          <li><a href="publications/paper1.pdf">Title of Paper 1</a></li>
+          <li><a href="publications/paper2.pdf">Title of Paper 2</a></li>
+          <li><a href="publications/paper3.pdf">Title of Paper 3</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
       <h2>Research Interests</h2>
-      <p>I am studying earthquake source physics and applications of machine learning techniques to geophysical problems. My current research interests are the following.</p>
+      I am studying earthquake source physics and applications of machine learning techniques to geophysical problems. My current research interests are the followings.
       <ul>
         <li>Multi-scale earthquake source property.</li>
         <li>Representation and scale-dependence of fault constitutive law.</li>
@@ -220,11 +203,6 @@
         <li>Numerical simulation and modeling of dynamic earthquake sequences.</li>
         <li>Machine learning for physics-based earthquake prediction.</li>
       </ul>
-    </div>
-
-    <div class="section">
-      <h2 class="clickable" onclick="openModal()">Publications</h2>
-      <p>Click the title above to see the full list of publications.</p>
     </div>
 
     <div class="section">
@@ -238,37 +216,19 @@
 
   </div>
 
-  <!-- Modal -->
-  <div id="pubModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Publications</h2>
-      <ul>
-        <li><a href="publications/paper1.pdf">Title of Paper 1</a></li>
-        <li><a href="publications/paper2.pdf">Title of Paper 2</a></li>
-        <li><a href="publications/paper3.pdf">Title of Paper 3</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Reiju Norisugi. All rights reserved.
-  </footer>
-
   <script>
-    function openModal() {
-      document.getElementById('pubModal').style.display = 'block';
-    }
-    function closeModal() {
-      document.getElementById('pubModal').style.display = 'none';
-    }
-    window.onclick = function(event) {
-      const modal = document.getElementById('pubModal');
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
+    const toggle = document.getElementById('pub-toggle');
+    const content = document.getElementById('pub-list');
 
+    toggle.addEventListener('click', () => {
+      if(content.style.maxHeight){
+        content.style.maxHeight = null;
+        toggle.textContent = 'Publications ▼';
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        toggle.textContent = 'Publications ▲';
+      }
+    });
+  </script>
 </body>
 </html>
