@@ -298,6 +298,16 @@
       text-decoration: underline;
     }
 
+    .left-accent {
+      position: fixed;
+      top: 0;
+      left: 40px;
+      width: 2px;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+
     /* ===============================
       Responsive Styles
     =============================== */
@@ -308,7 +318,7 @@
       .photo { width: 100px; height: 100px; }
       h1 { font-size: 1.5rem; }
       h2 { font-size: 1.2rem; }
-      .white-card p, .white-card ul li, .edu-list li, .subtext { font-size: 0.95rem; line-height: 1.5; }
+      .white-card p, .white-card ul li, .edu-list li, .subtext { font-size: 0.85rem; line-height: 1.5; }
       .card .links a:first-child { margin-top: 6px; }
       .links a { font-size: 0.95rem; padding: 8px 12px; }
       .links { gap: 8px; }
@@ -318,11 +328,14 @@
       .publication-list li::before { left: 0; }
       .footer { font-size: 0.85rem; padding: 15px 5px; }
       .right-sidebar {display: none;}
+      .left_accent{display: none}
     }
   </style>
 </head>
 <body>
   <div class="container">
+
+    <div class="left-accent"></div>
 
     <!-- Profile card -->
     <div class="card">
@@ -462,7 +475,7 @@
       <div class="side-card">
         <h3 class="side-title">✦ Recent News ✦</h3>
         <ul class="news-list">
-          <li>2024/11 —<br>
+          <li>2025/11 —<br>
             Homepage open!</li>
           <li>2025/10 —<br>
             <a href="https://doi.org/10.1038/s41467-025-64542-4" class="doi-link" target="_blank">Paper published!</a><br>
