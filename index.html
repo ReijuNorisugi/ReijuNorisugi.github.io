@@ -11,22 +11,19 @@
       margin: auto;
       padding: 2rem;
       line-height: 1.6;
-      background-color: #000;   /* 背景を黒に */
-      color: #fff;              /* 文字を白に */
-    }
-    h1, h2 { color: #fff; }
-    a { color: #66ccff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { margin-left: 1.5rem; }
-    .section { margin-bottom: 3rem; }
 
-    /* --- Profile header --- */
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
+      /* 黒 + 青の高級感あるグラデーション */
+      background: linear-gradient(145deg, #000000 0%, #020b1c 100%);
+
+      /* 細かいノイズで質感を追加 */
+      background-image:
+          radial-gradient(rgba(255,255,255,0.04) 1px, transparent 0),
+          radial-gradient(rgba(255,255,255,0.02) 1px, transparent 0);
+      background-size: 4px 4px, 6px 6px;
+
+      color: #fff;
     }
+
 
     .profile-pic {
       width: 100px;
