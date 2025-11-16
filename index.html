@@ -179,6 +179,7 @@
     }
 
     /* DOI list style */
+    /* DOI / Conference list */
     .doi-list {
       counter-reset: doi-counter;
       display: flex;
@@ -191,6 +192,7 @@
       list-style: none;
       counter-increment: doi-counter;
       position: relative;
+      padding-left: 36px;
     }
 
     .doi-list li::before {
@@ -198,8 +200,10 @@
       color: #0033aa;
       font-weight: bold;
       position: absolute;
-      left: -32px;
+      left: 0;
+      top: 0;
     }
+
 
     /* Education list */
     .edu-list {
@@ -283,14 +287,14 @@
         gap: 8px;
       }
 
-      .doi-list li::before {
-        left: -18px;
-        font-size: 0.9rem;
-      }
-
       .doi-list {
-        padding-left: 28px;
+        padding-left: 30px;
       }
+      
+      .doi-list li {
+        padding-left: 26px;
+      }
+    
 
       .edu-list {
         padding-left: 18px;
