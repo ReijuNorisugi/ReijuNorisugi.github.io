@@ -14,7 +14,7 @@
       background: #000010;
       font-family: "Inter", sans-serif;
       color: #e6e6e6;
-      display: block; /* ← 修正 */
+      display: block;
       padding: 40px 0;
     }
 
@@ -70,7 +70,6 @@
       text-decoration: underline;
     }
 
-
     .links {
       display: flex;
       flex-direction: column;
@@ -99,43 +98,24 @@
       border: 1px solid rgba(0, 150, 255, 0.3);
     }
 
-    .fa-orcid {
-      color: #A6CE39;
-      font-size: 1.4rem;
-    }
+    .fa-orcid { color: #A6CE39; font-size: 1.4rem; }
+    .fa-github { color: #ffffff; font-size: 1.4rem; }
+    .fa-at { color: #66c8ff; font-size: 1.4rem; }
+    .fa-google { color: #66c8ff; font-size: 1.4rem; }
+    .fa-box { color: #ffcc00; font-size: 1.4rem; } /* Zenodoアイコン色 */
 
-    .fa-github {
-      color: #ffffff;
-      font-size: 1.4rem;
-    }
-
-    .fa-at {
-      font-size: 1.4rem;
-      color: #66c8ff;
-    }
-    
-    .fa-google {
-      color: #66c8ff;
-      font-size: 1.4rem;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
+    .section { margin-bottom: 40px; }
 
     h2 {
       border-left: 4px solid #444;
       padding-left: 10px;
     }
 
-    a {
-      color: #66c8ff;
-    }
+    a { color: #66c8ff; }
   </style>
 </head>
 
 <body>
-
   <div class="container">
 
     <!-- Profile card -->
@@ -150,7 +130,6 @@
           Department of Geophysics, Kyoto University
         </a>
       </div>
-
       <div class="subtext">
         <a href="https://eqhz.dpri.kyoto-u.ac.jp/#en" target="_blank">
           Disaster Prevention Research Institute, Kyoto University
@@ -171,6 +150,11 @@
         <a href="https://github.com/ReijuNorisugi" target="_blank">
           <i class="fa-brands fa-github"></i>
           GitHub Repository
+        </a>
+
+        <a href="https://zenodo.org/search?page=1&size=20&q=ORCID:0009-0002-6610-9482" target="_blank">
+          <i class="fa-solid fa-box"></i>
+          Zenodo Repository
         </a>
 
         <a href="https://orcid.org/0009-0002-6610-9482" target="_blank">
@@ -213,6 +197,5 @@
     </div>
 
   </div>
-
 </body>
 </html>
