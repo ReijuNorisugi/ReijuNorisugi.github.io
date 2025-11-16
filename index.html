@@ -2,105 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reiju Norisugi - Researcher</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reiju Norisugi</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      line-height: 1.6;
-      background-color: #000;   /* 黒背景 */
-      color: #fff;              /* 白文字 */
-    }
-    h1, h2 { color: #fff; }
-    a { color: #66ccff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { margin-left: 1.5rem; }
-    .section { margin-bottom: 3rem; }
-
-    /* --- Profile header --- */
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .profile-pic {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #fff;
-    }
-
-    /* --- Social icon links --- */
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-      margin: 0.5rem 0 1rem 0;
-    }
-
-    .icon-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #111;
+      margin: 0;
+      background: #0b0b0e;
+      font-family: "Inter", sans-serif;
+      color: #e6e6e6;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: 0.2s;
-      border: 1px solid #444;
+      height: 100vh;
     }
 
-    .icon-btn:hover {
-      background: #222;
-      border-color: #66ccff;
-      transform: scale(1.05);
+    .card {
+      background: #111217;
+      padding: 40px 50px;
+      border-radius: 20px;
+      width: 480px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .icon-btn svg {
-      width: 22px;
-      height: 22px;
-      fill: #fff;
+    .photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 20px auto;
+      background-size: cover;
+      background-position: center;
+      background-image: url("me.jpg");
+      border: 3px solid #333;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .subtext {
+      font-size: 1.05rem;
+      color: #bdbdbd;
+      margin-bottom: 25px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 15px;
+      border-radius: 12px;
+      background: #1b1c22;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: 0.2s ease;
+      font-size: 1.05rem;
+    }
+
+    .links a:hover {
+      background: #25262e;
+      transform: translateY(-1px);
+      border: 1px solid rgba(0, 150, 255, 0.3);
+    }
+
+    .fa-orcid {
+      color: #A6CE39; /* ORCID公式カラー */
+      font-size: 1.4rem;
+    }
+
+    .fa-github {
+      color: #ffffff; /* GitHub猫アイコン */
+      font-size: 1.4rem;
     }
   </style>
 </head>
 
 <body>
+  <div class="card">
+    <div class="photo"></div>
 
-  <div class="header">
-    <img src="me.jpg" alt="Profile Photo" class="profile-pic">
-    <div>
-      <h1>Reiju Norisugi</h1>
-      <p>Master student, Department of Geophysics, Kyoto University</p>
+    <h1>Reiju Norisugi</h1>
+    <div class="subtext">Dynamic earthquake sequences / Physics-based simulations</div>
+
+    <div class="links">
+      <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">
+        <i class="fa-brands fa-orcid"></i>
+        ORCID: 0000-0000-0000-0000
+      </a>
+
+      <a href="https://github.com/YourName" target="_blank">
+        <i class="fa-brands fa-github"></i>
+        GitHub Repository
+      </a>
     </div>
   </div>
-
-  <!-- ORCID & GitHub icons -->
-  <div class="social-icons" style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem;">
-
-    <!-- ORCID (icon + ID text) -->
-    <a href="https://orcid.org/0009-0002-6610-9482" target="_blank" style="display:flex; align-items:center; gap:0.5rem; color:#66ccff;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#66ccff" viewBox="0 0 256 256">
-        <circle cx="128" cy="128" r="120" stroke="none"/>
-        <text x="128" y="155" font-size="110" text-anchor="middle" fill="#000" font-family="Arial">i</text>
-      </svg>
-      ORCID: 0009-0002-6610-9482
-    </a>
-
-    <!-- GitHub (icon + text) -->
-    <a href="https://github.com/ReijuNorisugi" target="_blank" style="display:flex; align-items:center; gap:0.5rem; color:#66ccff;">
-      <svg height="20" viewBox="0 0 16 16" width="20" fill="#66ccff">
-        <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59..."/>
-      </svg>
-      GitHub: ReijuNorisugi
-    </a>
-
-  </div>
-
 
   <p>Email: <a href="mailto:norisugi.reiju.77e@st.kyoto-u.ac.jp">
     norisugi.reiju.77e@st.kyoto-u.ac.jp
