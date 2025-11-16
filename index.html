@@ -184,24 +184,24 @@
       counter-reset: doi-counter;
       display: flex;
       flex-direction: column-reverse;
-      padding-left: 40px;
+      padding-left: 0;
     }
 
     .doi-list li {
       margin-bottom: 14px;
       list-style: none;
       counter-increment: doi-counter;
-      position: relative;
-      padding-left: 36px;
+      padding-left: 0;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
     }
 
     .doi-list li::before {
-      content: "[" counter(doi-counter) "] ";
+      content: "[" counter(doi-counter) "]"; 
       color: #0033aa;
       font-weight: bold;
-      position: absolute;
-      left: 0;
-      top: 0;
+      flex-shrink: 0;
     }
 
 
@@ -287,12 +287,8 @@
         gap: 8px;
       }
 
-      .doi-list {
-        padding-left: 30px;
-      }
-      
       .doi-list li {
-        padding-left: 26px;
+        gap: 4px;
       }
     
 
