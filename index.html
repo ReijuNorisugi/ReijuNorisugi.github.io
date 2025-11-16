@@ -19,13 +19,38 @@
     a:hover { text-decoration: underline; }
     ul { margin-left: 1.5rem; }
     .section { margin-bottom: 3rem; }
+
+    /* --- Profile header --- */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;     /* 写真を丸くする */
+      object-fit: cover;      /* 写真の切り抜きを自然にする */
+      border: 2px solid #fff; /* 白い縁取り */
+    }
   </style>
 </head>
+
 <body>
 
-  <h1>Reiju Norisugi</h1>
-  <p>Master student, Department of Geophysics, Kyoto University</p>
-  <p>Email: <a href="mailto:your.email@example.com">norisugi.reiju.77e@st.kyoto-u.ac.jp</a></p>
+  <div class="header">
+    <img src="me.jpg" alt="Profile Photo" class="profile-pic">
+    <div>
+      <h1>Reiju Norisugi</h1>
+      <p>Master student, Department of Geophysics, Kyoto University</p>
+    </div>
+  </div>
+
+  <p>Email: <a href="mailto:norisugi.reiju.77e@st.kyoto-u.ac.jp">
+    norisugi.reiju.77e@st.kyoto-u.ac.jp
+  </a></p>
 
   <div class="section">
     <h2>Research Interests</h2>
@@ -33,9 +58,9 @@
     <ul>
       <li>Multi-scale earthquake source property.</li>
       <li>Representation and scale-dependence of fault constitutive law.</li>
-      <li>Rcok-friction and -fracture experiments.</li>
+      <li>Rock-friction and -fracture experiments.</li>
       <li>Fracture mechanics.</li>
-      <li>Numerical simulation and modeling of dynamic earthquakse sequences.</li>
+      <li>Numerical simulation and modeling of dynamic earthquake sequences.</li>
       <li>Machine learning for physics-based earthquake prediction.</li>
     </ul>
   </div>
@@ -57,11 +82,5 @@
     </ul>
   </div>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-  </div>
-
 </body>
 </html>
-
