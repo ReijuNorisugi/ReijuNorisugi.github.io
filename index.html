@@ -12,7 +12,7 @@
 
   <style>
     /* ===============================
-      Global Styles
+      Global Styles.
     =============================== */
     body {
       margin: 0;
@@ -29,7 +29,7 @@
     }
 
     /* ===============================
-      Profile Card
+      Profile Card.
     =============================== */
     .card {
       background: #111217;
@@ -116,7 +116,7 @@
     }
 
     /* ===============================
-      White Cards
+      White Cards.
     =============================== */
     .white-card {
       background: #b9b9bc;
@@ -151,7 +151,7 @@
     }
 
     /* ===============================
-      Sections and Headings
+      Sections and Headings.
     =============================== */
     .section {
       margin-bottom: 40px;
@@ -173,18 +173,18 @@
     }
 
     /* ===============================
-      Publications専用リスト（番号下から順）
+      Publication list.
     =============================== */
     .publication-list {
       counter-reset: pub-counter;
       padding-left: 0;
       list-style: none;
       display: flex;
-      flex-direction: column; /* DOM の順番どおり */
+      flex-direction: column;
     }
 
     .publication-list li {
-      counter-increment: pub-counter; /* JSで番号振り直すためここは使わない */
+      counter-increment: pub-counter;
       margin-bottom: 20px;
       padding-left: 28px;
       position: relative;
@@ -208,6 +208,12 @@
     .edu-list li {
       margin-bottom: 10px;
       list-style: disc;
+    }
+
+    /* Conference list */
+    .year-label {
+      font-weight: bold;
+      color: #370280;
     }
 
     /* Footer */
@@ -331,18 +337,18 @@
       <h2 id="conf-toggle">Conferences ▼</h2>
       <div class="accordion-content" id="conf-list">
         <ol class="edu-list">
-          ---- 2025 ----
+          <li class="year-label">---- 2025 ----</li>
           <li>12th ACES International Workshop, Taipei, Taiwan.</li>
           <li>SSJ Fall Meeting, Fukuoka, Japan.</li>
           <li>The ERC Tectonic Workshop 3rd Edition, Roma, Italy.</li>
           <li>JpGU, Chiba, Japan.</li>
-          ---- 2024 ----
+          <li class="year-label">---- 2024 ----</li>
           <li>AGU Fall Meeting, Washington D.C., USA.</li>
           <li>SSJ Fall Meeting, Nigata, Japan.</li>
           <li>International Workshop on Earthquakes 4th Edition, Cargèse, France.</li>
           <li>International Joint Workshop on Slow-to-Fast Earthquakes, Beppu, Japan.</li>
           <li>JpGU, Chiba, Japan.</li>
-          ---- 2023 ----
+          <li class="year-label">---- 2023 ----</li>
           <li>AGU Fall Meeting, San Francisco, USA.</li>
           <li>The ERC Tectonic Workshop, Roma 2nd Edition, Italy.</li>
           <li>International Joint Workshop on Slow-to-Fast Earthquakes, Tokyo, Japan.</li>
@@ -385,7 +391,7 @@
   </div>
 
   <script>
-    // Accordion toggles
+    // Accordion toggles.
     function setupToggle(toggleId, contentId, title) {
       const toggle = document.getElementById(toggleId);
       const content = document.getElementById(contentId);
@@ -405,11 +411,11 @@
     setupToggle('conf-toggle', 'conf-list', 'Conferences');
     setupToggle('awards-toggle', 'awards-list', 'Awards');
 
-    // Publications番号を下から順に振る
+    // Publications reference.
     const pubItems = document.querySelectorAll('.publication-list li');
     const n = pubItems.length;
     pubItems.forEach((li, i) => {
-      li.setAttribute('data-num', n - i); // 下から順
+      li.setAttribute('data-num', n - i);
     });
   </script>
 
