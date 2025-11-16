@@ -162,6 +162,16 @@
       left: -32px;
     }
 
+    .edu-list {
+      padding-left: 22px;
+      margin-top: 10px;
+    }
+
+    .edu-list li {
+      margin-bottom: 10px;
+      list-style: disc;
+    }
+
     .footer {
       margin-top: 15px;
       padding: 20px 10px;
@@ -268,6 +278,27 @@
       </div>
     </div>
 
+    <!-- Educations: white card -->
+    <div class="section white-card">
+      <h2 id="edu-toggle">Educations ▼</h2>
+
+      <div class="accordion-content" id="edu-list">
+        <ul class="edu-list">
+
+          <li>
+            M.Sc. in Geophysics, Kyoto University  
+            <br><span style="color:#333;">2023–present</span>
+          </li>
+
+          <li>
+            B.Sc. in Earth and Planetary Sciences, Kyoto University  
+            <br><span style="color:#333;">2019–2023</span>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
     <div class="section">
       <h2>Address</h2>
       <p>
@@ -280,6 +311,7 @@
   </div>
 
   <script>
+    // Publications
     const toggle = document.getElementById('pub-toggle');
     const content = document.getElementById('pub-list');
 
@@ -290,6 +322,20 @@
       } else {
         content.style.maxHeight = content.scrollHeight + "px";
         toggle.textContent = 'Publications ▲';
+      }
+    });
+
+    // Educations
+    const eduToggle = document.getElementById('edu-toggle');
+    const eduContent = document.getElementById('edu-list');
+
+    eduToggle.addEventListener('click', () => {
+      if (eduContent.style.maxHeight) {
+        eduContent.style.maxHeight = null;
+        eduToggle.textContent = 'Educations ▼';
+      } else {
+        eduContent.style.maxHeight = eduContent.scrollHeight + "px";
+        eduToggle.textContent = 'Educations ▲';
       }
     });
   </script>
