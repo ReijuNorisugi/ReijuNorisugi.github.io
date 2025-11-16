@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap">
 
   <style>
+    /* ===============================
+      Global Styles
+    =============================== */
     body {
       margin: 0;
       background: #000010;
@@ -25,7 +28,9 @@
       margin: auto;
     }
 
-    /* Black card for profile */
+    /* ===============================
+      Profile Card (Black Card)
+    =============================== */
     .card {
       background: #111217;
       padding: 45px 50px;
@@ -36,40 +41,7 @@
       margin-bottom: 42px;
     }
 
-    /* White card for texts */
-    .white-card {
-      background: #b9b9bc;
-      color: #000000;
-      padding: 10px 40px;
-      border-radius: 18px;
-      box-shadow: 0 0 25px rgba(255,255,255,0.15);
-      margin-bottom: 45px;
-      border: 1px solid #ccc;
-    }
-
-    .white-card p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 18px;
-    }
-
-    .white-card ul {
-      margin-top: 16px;
-      margin-bottom: 22px;
-      padding-left: 26px;
-    }
-
-    .white-card ul li {
-      font-size: 1.03rem;
-      line-height: 1.65;
-      margin-bottom: 10px;
-    }
-
-    /* For link in white card */
-    .white-card a {
-      color: #0033aa;
-    }
-
+    /* Profile photo */
     .photo {
       width: 135px;
       height: 135px;
@@ -82,6 +54,7 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     }
 
+    /* Name and title */
     h1 {
       font-size: 2rem;
       margin-bottom: 25px;
@@ -106,6 +79,7 @@
       text-decoration: underline;
     }
 
+    /* Links inside profile card */
     .links {
       display: flex;
       flex-direction: column;
@@ -134,17 +108,59 @@
       border: 1px solid rgba(0, 150, 255, 0.3);
     }
 
+    /* Icon colors */
     .fa-orcid { color: #A6CE39; font-size: 1.4rem; }
     .fa-github { color: #ffffff; font-size: 1.4rem; }
     .fa-at { color: #66c8ff; font-size: 1.4rem; }
     .fa-google { color: #FFC107; font-size: 1.4rem; }
     .fa-box { color: #a86cd3; font-size: 1.4rem; }
 
+    /* Add extra top margin for the first link */
     .card .links a:first-child {
       margin-top: 10px;
     }
 
-    .section { margin-bottom: 40px; }
+    /* ===============================
+      White Card (Text Sections)
+    =============================== */
+    .white-card {
+      background: #b9b9bc;
+      color: #000000;
+      padding: 10px 40px;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.15);
+      margin-bottom: 45px;
+      border: 1px solid #ccc;
+    }
+
+    .white-card p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .white-card ul {
+      margin-top: 16px;
+      margin-bottom: 22px;
+      padding-left: 26px;
+    }
+
+    .white-card ul li {
+      font-size: 1.03rem;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+
+    .white-card a {
+      color: #0033aa;
+    }
+
+    /* ===============================
+      Sections and Headings
+    =============================== */
+    .section {
+      margin-bottom: 40px;
+    }
 
     h2 {
       border-left: 4px solid #444;
@@ -154,7 +170,7 @@
       color: inherit;
     }
 
-    /* Accordion */
+    /* Accordion content (for publications/education) */
     .accordion-content {
       max-height: 0;
       overflow: hidden;
@@ -162,7 +178,7 @@
       margin-top: 10px;
     }
 
-    /* DOI lists */
+    /* DOI list style */
     .doi-list {
       counter-reset: doi-counter;
       display: flex;
@@ -177,7 +193,6 @@
       position: relative;
     }
 
-    /* DOI list */
     .doi-list li::before {
       content: "[" counter(doi-counter) "] ";
       color: #0033aa;
@@ -186,6 +201,7 @@
       left: -32px;
     }
 
+    /* Education list */
     .edu-list {
       padding-left: 22px;
       margin-top: 10px;
@@ -196,6 +212,9 @@
       list-style: disc;
     }
 
+    /* ===============================
+      Footer
+    =============================== */
     .footer {
       margin-top: 15px;
       padding: 20px 10px;
@@ -213,10 +232,12 @@
     .footer a:hover {
       text-decoration: underline;
     }
-  
-  
-    /* Responsive tuning */
+
+    /* ===============================
+      Responsive Styles (Mobile)
+    =============================== */
     @media (max-width: 600px) {
+
       body {
         padding: 20px 10px;
       }
@@ -238,6 +259,7 @@
       h1 {
         font-size: 1.5rem;
       }
+
       h2 {
         font-size: 1.2rem;
       }
@@ -247,6 +269,7 @@
         line-height: 1.5;
       }
 
+      /* Adjust first link top margin for mobile */
       .card .links a:first-child {
         margin-top: 6px;
       }
@@ -255,6 +278,7 @@
         font-size: 0.95rem;
         padding: 8px 12px;
       }
+
       .links {
         gap: 8px;
       }
